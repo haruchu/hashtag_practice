@@ -1,8 +1,12 @@
 <div class="container">
+  <form action="" method="get">
+    <input name="tag" value="{{ request.GET.tag }}" type="text" />
+    <button type="submit">検索する</button>
+  </form>
   {% for post in object_list %}
   <div class="post">
-    <p>タイトル<br/>{{ post.title }}</p>
-    <p>内容<br/>{{ post.text|linebreaksbr  }}</p>
+    <p>タイトル<br />{{ post.title }}</p>
+    <p>内容<br />{{ post.text|linebreaksbr }}</p>
     <p>--------------------</p>
   </div>
   {% endfor %}
