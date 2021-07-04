@@ -1,0 +1,8 @@
+<form method="POST">
+  {% csrf_token %}
+  <p>タイトル<br /><input type="text" name="title" /></p>
+  <p>
+    内容<br /><textarea type="text" name="text" rows="10" cols="40"></textarea>
+  </p>
+  <input type="submit" value="投稿する" />
+</form>

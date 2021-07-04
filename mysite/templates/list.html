@@ -1,0 +1,12 @@
+<div class="container">
+  {% for post in object_list %}
+  <div class="post">
+    <p>タイトル<br/>{{ post.title }}</p>
+    <p>内容<br/>{{ post.text|linebreaksbr  }}</p>
+    <p>--------------------</p>
+  </div>
+  {% endfor %}
+  <div class="form">
+    <a href="{% url 'form' %}">新規投稿</a>
+  </div>
+</div>
