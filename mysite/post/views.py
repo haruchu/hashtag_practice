@@ -7,6 +7,15 @@ from .models import Post, Tag
 class ListClass(ListView):
     template_name = 'list.html'
     model = Post
+    def get_queryset(self):
+        tag = self.request.GET.get('tag')
+
+        if tag:
+            post_list = Post.objects.filter(
+                tag__name__icontains=tag)
+        else:
+            post_list = Post.objects.all()
+        return post_list
 
 
 class FormClass(CreateView):
